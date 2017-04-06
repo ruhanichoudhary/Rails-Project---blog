@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>BlogBucket</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+ <div id="sidebar">
+
+   <div id= "logo">
+      <%= link_to root_path do %>
+     <%= image_tag "social.png" %>
+           <% end %>
+      </div>
+
+      <ul>
+      <li class= "category">Know Us </li>
+      <li><%= link_to "Home" , root_path %> </li>
+      <li>About</li>
+      </ul>
+
+      <ul>
+      	<li class="category">My Social</li>
+      	<li><a href="#">Facebook</a></li>
+      	<li><a href="#">Instagram</a></li>
+      	<li><a href="#">GooglePlus</a></li>
+      	<li><a href="#">Linked In</a></li>
+
+      </ul>
+
+      <p class="sign_in">Admin Login</p>
+
+ </div>
+
+ <div id="main_content">
+		<div id="header">
+				<p>All Posts</p>
+
+			<div class="buttons">
+				<button class="button"><%= link_to "New Post", new_post_path %></button>
+				<button class="button">Log Out</button>
+			</div>
+        </div>
+
+    <%= yield %>
+
+</div>
+
+</body>
+</html>
